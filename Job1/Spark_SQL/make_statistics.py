@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.types import IntegerType
 from pyspark.sql.functions import collect_list, struct, col, min, max, avg, count, collect_set, round
 import time
 
@@ -10,13 +11,13 @@ def main():
         .getOrCreate()
 
     # Legge il CSV pulito
-    df = spark.read.csv("../../used_cars_data_clean.csv", header=True,   inferSchema=True,
-    multiLine=True,
-    escape='"',
-    quote='"'
-)
-
-    # OPZIONE 1: Usa solo SQL (raccomandato)
+    df = spark.read.csv("../../used_cars_data_clean.csv", header=True, inferSchema=True,
+                        multiLine=True,
+                        escape='"',
+                        quote='"'
+                        )
+    print("✅ Dataset caricato con successo")
+    df = df.withColumn("year", col("year").cast(IntegerType()))
     df_agg = df.groupBy("make_name", "model_name").agg(
         count("*").alias("num_cars"),
         min("price").alias("min_price"),
@@ -25,7 +26,6 @@ def main():
         collect_set("year").alias("years_present")
     )
 
-    # Raggruppa per marca e crea lista modelli
     df_final = df_agg.groupBy("make_name").agg(
         collect_list(
             struct(
@@ -43,6 +43,7 @@ def main():
     df_final.write.mode("overwrite").json("output.json")
     df_final.write.mode("overwrite").parquet("car_staticsJob1.parquet")
     print(f"⏱️ Tempo totale: {time.time() - start_time:.2f} secondi")
+
 
 if __name__ == "__main__":
     main()
