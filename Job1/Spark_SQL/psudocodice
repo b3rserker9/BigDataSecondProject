@@ -1,0 +1,24 @@
+Inizializza SparkSession
+
+Leggi il dataset CSV pulito in un DataFrame
+- Imposta header=True, inferSchema=True
+- Gestione multilinea e escape quote
+
+Cast della colonna 'year' a intero
+
+Per ogni (make_name, model_name):
+    Calcola:
+        - Numero di auto (count)
+        - Prezzo minimo (min)
+        - Prezzo massimo (max)
+        - Prezzo medio arrotondato (avg)
+        - Set di anni distinti (collect_set)
+
+Per ogni make_name:
+    Raccogli una lista di strutture contenenti le statistiche dei modelli
+
+Salva il risultato in:
+    - formato JSON → 'output.json'
+    - formato Parquet → 'car_staticsJob1.parquet'
+
+Stampa tempo di esecuzione

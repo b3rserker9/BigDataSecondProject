@@ -1,0 +1,74 @@
+hive> INSERT OVERWRITE TABLE cars_stats SELECT     make_name,     model_name,     COUNT(*) AS num_cars,     MIN(price) AS min_price,     MAX(price) AS max_price,     ROUND(AVG(price), 2) AS avg_price,     COLLECT_SET(year) AS available_years FROM used_cars GROUP BY make_name, model_name;
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = hdoop_20250614112959_18cb1f60-e4a1-4afb-b957-e723fe499adc
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 28
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1749893387249_0001, Tracking URL = http://Yousef.:8088/proxy/application_1749893387249_0001/
+Kill Command = /home/hdoop/hadoop-3.4.1/bin/hadoop job  -kill job_1749893387249_0001
+Hadoop job information for Stage-1: number of mappers: 27; number of reducers: 28
+2025-06-14 11:30:09,065 Stage-1 map = 0%,  reduce = 0%
+2025-06-14 11:30:24,591 Stage-1 map = 15%,  reduce = 0%, Cumulative CPU 6.81 sec
+2025-06-14 11:30:25,606 Stage-1 map = 22%,  reduce = 0%, Cumulative CPU 13.89 sec
+2025-06-14 11:30:38,930 Stage-1 map = 30%,  reduce = 0%, Cumulative CPU 17.99 sec
+2025-06-14 11:30:39,945 Stage-1 map = 44%,  reduce = 0%, Cumulative CPU 26.98 sec
+2025-06-14 11:30:51,509 Stage-1 map = 48%,  reduce = 0%, Cumulative CPU 29.2 sec
+2025-06-14 11:30:52,583 Stage-1 map = 56%,  reduce = 0%, Cumulative CPU 33.39 sec
+2025-06-14 11:30:53,203 Stage-1 map = 63%,  reduce = 0%, Cumulative CPU 37.7 sec
+2025-06-14 11:30:56,384 Stage-1 map = 63%,  reduce = 1%, Cumulative CPU 37.84 sec
+2025-06-14 11:31:02,074 Stage-1 map = 74%,  reduce = 1%, Cumulative CPU 44.53 sec
+2025-06-14 11:31:05,716 Stage-1 map = 74%,  reduce = 2%, Cumulative CPU 44.64 sec
+2025-06-14 11:31:09,318 Stage-1 map = 85%,  reduce = 3%, Cumulative CPU 51.52 sec
+2025-06-14 11:31:17,060 Stage-1 map = 96%,  reduce = 3%, Cumulative CPU 58.34 sec
+2025-06-14 11:31:19,682 Stage-1 map = 100%,  reduce = 3%, Cumulative CPU 59.38 sec
+2025-06-14 11:31:20,724 Stage-1 map = 100%,  reduce = 5%, Cumulative CPU 59.68 sec
+2025-06-14 11:31:22,802 Stage-1 map = 100%,  reduce = 6%, Cumulative CPU 60.49 sec
+2025-06-14 11:31:23,353 Stage-1 map = 100%,  reduce = 7%, Cumulative CPU 61.56 sec
+2025-06-14 11:31:24,407 Stage-1 map = 100%,  reduce = 10%, Cumulative CPU 62.53 sec
+2025-06-14 11:31:25,447 Stage-1 map = 100%,  reduce = 11%, Cumulative CPU 63.7 sec
+2025-06-14 11:31:27,515 Stage-1 map = 100%,  reduce = 14%, Cumulative CPU 65.17 sec
+2025-06-14 11:31:31,138 Stage-1 map = 100%,  reduce = 21%, Cumulative CPU 68.13 sec
+2025-06-14 11:31:34,803 Stage-1 map = 100%,  reduce = 25%, Cumulative CPU 69.64 sec
+2025-06-14 11:31:35,837 Stage-1 map = 100%,  reduce = 32%, Cumulative CPU 72.74 sec
+2025-06-14 11:31:38,482 Stage-1 map = 100%,  reduce = 36%, Cumulative CPU 74.31 sec
+2025-06-14 11:31:42,666 Stage-1 map = 100%,  reduce = 43%, Cumulative CPU 77.55 sec
+2025-06-14 11:31:47,348 Stage-1 map = 100%,  reduce = 46%, Cumulative CPU 79.19 sec
+2025-06-14 11:31:47,902 Stage-1 map = 100%,  reduce = 50%, Cumulative CPU 80.77 sec
+2025-06-14 11:31:48,965 Stage-1 map = 100%,  reduce = 54%, Cumulative CPU 82.35 sec
+2025-06-14 11:31:50,000 Stage-1 map = 100%,  reduce = 57%, Cumulative CPU 83.88 sec
+2025-06-14 11:31:53,662 Stage-1 map = 100%,  reduce = 61%, Cumulative CPU 85.42 sec
+2025-06-14 11:31:54,721 Stage-1 map = 100%,  reduce = 64%, Cumulative CPU 87.24 sec
+2025-06-14 11:31:57,833 Stage-1 map = 100%,  reduce = 68%, Cumulative CPU 88.92 sec
+2025-06-14 11:31:59,421 Stage-1 map = 100%,  reduce = 71%, Cumulative CPU 90.41 sec
+2025-06-14 11:32:00,481 Stage-1 map = 100%,  reduce = 79%, Cumulative CPU 93.37 sec
+2025-06-14 11:32:06,286 Stage-1 map = 100%,  reduce = 82%, Cumulative CPU 95.13 sec
+2025-06-14 11:32:07,325 Stage-1 map = 100%,  reduce = 86%, Cumulative CPU 96.73 sec
+2025-06-14 11:32:07,874 Stage-1 map = 100%,  reduce = 89%, Cumulative CPU 98.52 sec
+2025-06-14 11:32:09,915 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 102.78 sec
+MapReduce Total cumulative CPU time: 1 minutes 42 seconds 780 msec
+Ended Job = job_1749893387249_0001
+Loading data to table default.cars_stats
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 27  Reduce: 28   Cumulative CPU: 102.78 sec   HDFS Read: 6985475087 HDFS Write: 111126 SUCCESS
+Total MapReduce CPU Time Spent: 1 minutes 42 seconds 780 msec
+OK
+Time taken: 132.358 seconds
+hive> select * from cars_stats limit 10;
+OK
+Acura   RLX     278     578.0   56325.0 31519.23        [2016,2020,2014,2018,2015,2019,2017]
+Audi    S4      646     981.0   63145.0 21281.76        [2018,2019,2014,2020,2012,2011,2015,2016,2010,2006,2013,2004,2007,2005,2000,2001,2002,2009,2008]
+Audi    A3      2896    0.0     45340.0 21536.33        [2020,2015,2018,2017,2013,2012,2016,2010,2019,2011,2009,2008,2006,2007]
+Audi    R8      437     59999.0 226845.0        156827.6        [2015,2014,2017,2009,2020,2011,2018,2012,2010,2008]
+Audi    S5      479     391.0   66240.0 29564.88        [2017,2018,2020,2011,2009,2019,2016,2013,2015,2012,2014,2010,2008]
+Acura   Integra 8       NULL    NULL    NULL    [2001,1993,1997,2000]
+Acura   TL      915     3.0     17995.0 9310.36 [2012,2009,2008,2006,2010,2013,2004,2014,2007,2011,2005,2003,2002,2001,1999,2000,1997,1998]
+Audi    A4      4872    0.0     54085.0 17039.48        [2016,2019,2018,2017,2012,2015,2020,2011,2014,2004,2009,2013,2007,2005,2010,2006,2008,1998,2003,2001,2000,2002]
+Audi    Cabriolet       3       NULL    NULL    NULL    [1998,1997,1994]
+Audi    S6      374     100.0   50497.0 21907.8 [2017,2016,2014,2007,2020,2013,2018,2015,2011,2008,2002,2010,2009]
+Time taken: 0.08 seconds, Fetched: 10 row(s)

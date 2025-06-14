@@ -1,0 +1,30 @@
+Mapper
+
+per ogni riga del CSV:
+    estrai make_name, model_name, price, year
+    se price o year non validi, ignora riga
+    se make_name e model_name validi:
+        chiave = make_name + "|" + model_name
+        valore = JSON({"price": price, "year": year, "count": 1})
+        stampa chiave + "\t" + valore
+
+Reducer
+
+inizializza current_key = None
+inizializza count = 0, sum_price = 0, min_price = None, max_price = None, years_set = vuoto
+
+per ogni linea input ordinata per chiave:
+    dividi linea in chiave e valore_json
+    decodifica valore_json
+    se current_key != chiave:
+        se current_key != None:
+            avg_price = sum_price / count
+            stampa current_key + count + min_price + max_price + avg_price + anni ordinati
+        aggiorna current_key = chiave
+        resetta count, sum_price, min_price, max_price, years_set
+    aggiorna count += valore.count
+    aggiorna sum_price += valore.price
+    aggiorna min_price e max_price
+    aggiungi valore.year a years_set
+
+stampa risultato per ultima chiave

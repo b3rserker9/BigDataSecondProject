@@ -1,0 +1,42 @@
+1. INIZIALIZZAZIONE
+   - Avvia SparkSession con configurazioni di memoria adeguate
+   - Definisci cartelle di input (CSV) e output (JSON)
+   - Crea cartella output se non esiste
+
+2. PER OGNI FILE CSV NELLA CARTELLA DI INPUT:
+   a. Leggi il file CSV come DataFrame con intestazioni e gestione multilinea
+   b. Aggiungi colonna "price_range" con valori:
+      - "alto" se price > 50000
+      - "medio" se 20000 ≤ price ≤ 50000
+      - "basso" se price < 20000
+
+   c. CALCOLA STATISTICHE AGGREGATE:
+      - Raggruppa per (city, year, price_range)
+      - Calcola:
+         → numero di auto (count)
+         → media dei giorni sul mercato (avg daysonmarket)
+
+   d. ESTRAI PAROLE DA DESCRIZIONE:
+      - Converti la colonna "description" in minuscolo
+      - Rimuovi simboli e punteggiatura
+      - Suddividi il testo in parole
+      - Usa explode per generare una riga per parola
+      - Elimina parole vuote
+
+   e. CONTA FREQUENZA DELLE PAROLE:
+      - Raggruppa per (city, year, price_range, parola)
+      - Conta le occorrenze di ciascuna parola
+
+   f. SELEZIONA LE 3 PAROLE PIÙ FREQUENTI PER GRUPPO:
+      - Applica funzione row_number() su una finestra ordinata per conteggio decrescente
+      - Filtra parole con rank ≤ 3
+      - Raggruppa per (city, year, price_range) e aggrega le parole in una stringa unica
+
+   g. UNISCI STATISTICHE E PAROLE:
+      - Effettua una JOIN tra statistiche e top 3 parole per ciascun gruppo
+
+   h. MOSTRA E SALVA IL RISULTATO:
+      - Visualizza i primi 10 risultati
+      - Salva il DataFrame finale in formato JSON nella cartella di output
+
+3. STAMPA TEMPO DI ESECUZIONE GLOBALE

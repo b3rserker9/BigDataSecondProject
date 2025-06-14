@@ -1,23 +1,25 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import IntegerType
 from pyspark.sql.functions import collect_list, struct, col, min, max, avg, count, collect_set, round
+import os
 import time
 
+def process_file(spark, file_path, output_folder):
+    start = time.time()
+    file_name = os.path.splitext(os.path.basename(file_path))[0]
 
-def main():
-    start_time = time.time()
-    spark = SparkSession.builder \
-        .appName("MakeStatisticsJob") \
-        .getOrCreate()
+    print(f"\n📂 Elaborazione: {file_name}")
+    df = spark.read.csv(
+        file_path,
+        header=True,
+        inferSchema=True,
+        multiLine=True,
+        escape='"',
+        quote='"'
+    )
 
-    # Legge il CSV pulito
-    df = spark.read.csv("../../used_cars_data_clean.csv", header=True, inferSchema=True,
-                        multiLine=True,
-                        escape='"',
-                        quote='"'
-                        )
-    print("✅ Dataset caricato con successo")
     df = df.withColumn("year", col("year").cast(IntegerType()))
+
     df_agg = df.groupBy("make_name", "model_name").agg(
         count("*").alias("num_cars"),
         min("price").alias("min_price"),
@@ -39,10 +41,33 @@ def main():
         ).alias("models")
     )
 
-    # Salva in JSON
-    df_final.write.mode("overwrite").json("output.json")
-    df_final.write.mode("overwrite").parquet("car_staticsJob1.parquet")
-    print(f"⏱️ Tempo totale: {time.time() - start_time:.2f} secondi")
+    df_final.show(10, truncate=False)
+    end = time.time()
+    print(f"✅ Completato '{file_name}' in {end - start:.2f} secondi")
+    print(f"✅ salvataggio del file...")
+    df_final.write.mode("overwrite").json(f"{output_folder}/{file_name}_report.json")
+    end = time.time()
+    print(f"✅ salvataggio del file '{file_name}' in {end - start:.2f} secondi")
+
+
+
+def main():
+    total_start = time.time()
+    input_folder = "../../"
+    output_folder = "make_statistics_output/"
+    os.makedirs(output_folder, exist_ok=True)
+
+    spark = SparkSession.builder \
+        .appName("MakeStatisticsJobBatch") \
+        .getOrCreate()
+
+    file_list = [f for f in os.listdir(input_folder) if f.endswith(".csv")]
+
+    for file in file_list:
+        process_file(spark, os.path.join(input_folder, file), output_folder)
+
+    total_end = time.time()
+    print(f"\n⏱️ Tempo totale di esecuzione batch: {total_end - total_start:.2f} secondi")
 
 
 if __name__ == "__main__":

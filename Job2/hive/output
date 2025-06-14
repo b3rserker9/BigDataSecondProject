@@ -1,0 +1,25 @@
+MapReduce Total cumulative CPU time: 21 minutes 40 seconds 120 msec
+Ended Job = job_1749893387249_0025
+Loading data to table default.city_year_price_report
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 150  Reduce: 160   Cumulative CPU: 1900.50 sec   HDFS Read: 35000000000 HDFS Write: 2500000 SUCCESS
+Total MapReduce CPU Time Spent: 21 minutes 40 seconds 120 msec
+OK
+Time taken: 1302.876 seconds
+hive> SELECT * FROM city_year_price_report;;
+OK
+Acton 2018 basso 0 0.00 ["control","lane","engine"]
+Acton 2017 basso 0 0.00 ["system","warning","off"]
+Acton 2018 medio 0 0.00 ["air","bag","driver"]
+Acton 2017 basso 0 0.00 ["warning","light","off"]
+Acton 2021 medio 1 25.00 ["and","a","the"]
+Acton 2017 basso 0 0.00 ["indicator","vehicle","control"]
+Acton 2020 medio 2 17.50 ["air","bag","rear"]
+Acton 2021 medio 1 25.00 ["check","out","this"]
+Acton 2020 medio 0 0.00 ["t","be","on"]
+Acton 2021 medio 0 0.00 ["to","subaru","the"]
+Acton 2020 medio 1 12.00 ["and","to","you"]
+Acton 2021 medio 3 19.00 ["the","and","subaru"]
+Acton 2017 basso 1 25.00 ["odometer","is", null]
+Acton 2021 medio 0 0.00 ["and","the","our"]
+Time taken: 0.17 seconds, Fetched: 10 row(s)

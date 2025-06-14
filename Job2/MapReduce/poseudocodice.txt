@@ -1,0 +1,62 @@
+Funzione get_price_range(prezzo):
+    Se prezzo > 50000:
+        ritorna "alto"
+    Altrimenti se prezzo >= 20000:
+        ritorna "medio"
+    Altrimenti:
+        ritorna "basso"
+
+Inizio Mapper:
+    Per ogni riga nel file CSV:
+        Estrai city, year, price, daysonmarket, description
+
+        Calcola fascia = get_price_range(price)
+
+        Se uno dei campi city, year, fascia o daysonmarket è mancante:
+            salta la riga
+
+        Stampa: city, year, fascia, "STAT", 1, daysonmarket
+
+        Tokenizza description in parole minuscole
+
+        Per ogni parola nella descrizione:
+            Stampa: city, year, fascia, "WORD", parola, 1
+
+Inizio Reducer:
+    Inizializza: current_key = null
+                 total_cars = 0
+                 total_days = 0
+                 word_counter = mappa vuota
+
+    Per ogni riga in input:
+        Estrai city, year, fascia, tipo, valore1, valore2
+
+        Chiave = (city, year, fascia)
+
+        Se current_key ≠ chiave:
+            Se current_key non è null:
+                Calcola media_days = total_days / total_cars
+                Estrai top_3_parole da word_counter
+                Stampa: city, year, fascia, total_cars, media_days, top_3_parole
+
+            Reset variabili:
+                current_key = chiave
+                total_cars = 0
+                total_days = 0
+                word_counter = vuoto
+
+        Se tipo == "STAT":
+            total_cars += valore1
+            total_days += valore2
+
+        Se tipo == "WORD":
+            word_counter[parola] += valore2
+
+    Alla fine del file:
+        Se current_key non è null:
+            Calcola media_days = total_days / total_cars
+            Estrai top_3_parole da word_counter
+            Stampa: city, year, fascia, total_cars, media_days, top_3_parole
+
+Fine Reducer
+
