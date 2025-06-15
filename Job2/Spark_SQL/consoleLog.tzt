@@ -2,123 +2,119 @@ C:\Users\aliyo\AppData\Local\Microsoft\WindowsApps\python3.12.exe C:\Users\aliyo
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 
-🚗 Elaborazione: 0used_cars_data_0500MB.csv
-+--------------+----+-----------+--------+------------------+---------------------+
-|city          |year|price_range|num_cars|avg_daysonmarket  |top_3_words          |
-+--------------+----+-----------+--------+------------------+---------------------+
-|Anaheim       |2014|basso      |22      |37.54545454545455 |front, and, rear     |
-|Brooklyn      |2017|medio      |2       |53.0              |air, vanity, steering|
-|Canon City    |2020|medio      |28      |116.32142857142857|air, wheel, door     |
-|Cerritos      |2015|medio      |20      |43.4              |and, the, for        |
-|Costa Mesa    |2020|alto       |99      |101.38383838383838|rear, and, front     |
-|Garden Grove  |2018|medio      |50      |77.84             |and, front, rear     |
-|Murrieta      |2018|medio      |44      |34.52272727272727 |and, a, the          |
-|San Bernardino|2015|medio      |7       |18.0              |and, air, rear       |
-|Santa Ana     |2017|medio      |120     |30.75             |front, power, rear   |
-|Van Nuys      |2014|medio      |8       |42.875            |front, the, door     |
-+--------------+----+-----------+--------+------------------+---------------------+
+🚗 Elaborazione: used_cars_data_0.csv
++-------------+----+-----------+--------+------------------+----------------------+
+|city         |year|price_range|num_cars|avg_daysonmarket  |top_3_words           |
++-------------+----+-----------+--------+------------------+----------------------+
+|Ann Arbor    |2007|basso      |1       |0.0               |front, steering, wheel|
+|Bay Shore    |2019|alto       |7       |353.0             |front, rear, power    |
+|Bronx        |2018|medio      |83      |39.626506024096386|front, rear, power    |
+|Brooklyn     |2017|medio      |173     |33.50289017341041 |front, rear, power    |
+|East Hartford|2021|alto       |28      |31.178571428571427|power, rear, front    |
+|East Meadow  |2017|medio      |11      |77.18181818181819 |front, rear, wheel    |
+|East Windsor |2017|medio      |30      |22.333333333333332|power, rear, w        |
+|Green Brook  |2009|basso      |1       |1.0               |front, power, wheel   |
+|Meriden      |2013|basso      |19      |51.89473684210526 |front, rear, w        |
+|Roselle      |2018|basso      |5       |17.6              |front, rear, audio    |
++-------------+----+-----------+--------+------------------+----------------------+
 only showing top 10 rows
 
-✅ Completato '0used_cars_data_0500MB' in 37.99 secondi
+✅ Completato 'used_cars_data_0' in 38.42 secondi
 ✅ salvataggio del file...
-✅ salvataggio del file '0used_cars_data_0500MB' in 69.27 secondi
+✅ salvataggio del file 'used_cars_data_0' in 38.42 secondi
 
-🚗 Elaborazione: used_cars_data_1GB.csv
-+-------------+----+-----------+--------+------------------+---------------------+
-|city         |year|price_range|num_cars|avg_daysonmarket  |top_3_words          |
-+-------------+----+-----------+--------+------------------+---------------------+
-|Ann Arbor    |2007|basso      |1       |0.0               |door, front, steering|
-|Bay Shore    |2019|alto       |7       |353.0             |and, front, door     |
-|Bronx        |2018|medio      |83      |39.626506024096386|and, door, front     |
-|Brooklyn     |2017|medio      |374     |36.67914438502674 |door, front, and     |
-|East Hartford|2021|alto       |28      |31.178571428571427|and, with, front     |
-|East Meadow  |2017|medio      |11      |77.18181818181819 |and, front, the      |
-|East Windsor |2017|medio      |61      |28.688524590163933|and, rear, front     |
-|Green Brook  |2009|basso      |1       |1.0               |door, front, steering|
-|Meriden      |2013|basso      |20      |49.95             |inc, rear, front     |
-|Roselle      |2018|basso      |5       |17.6              |front, and, seat     |
-+-------------+----+-----------+--------+------------------+---------------------+
+🚗 Elaborazione: used_cars_data_1.csv
++----------------+----+-----------+--------+------------------+-------------------------+
+|city            |year|price_range|num_cars|avg_daysonmarket  |top_3_words              |
++----------------+----+-----------+--------+------------------+-------------------------+
+|Auburn          |2014|medio      |5       |51.2              |front, rear, power       |
+|Bridgewater     |2015|basso      |4       |48.25             |power, rear, control     |
+|Cranston        |2015|basso      |1       |43.0              |front, rear, type        |
+|Haverhill       |2019|medio      |11      |302.6363636363636 |front, rear, steering    |
+|Lisbon          |2010|basso      |1       |0.0               |power, seat, steering    |
+|Marion          |2021|medio      |9       |12.444444444444445|power, county, air       |
+|Nashua          |2007|basso      |3       |10.666666666666666|front, steering, rear    |
+|North Attleboro |2017|basso      |12      |119.0             |front, rear, type        |
+|North Chelmsford|2015|basso      |5       |64.4              |front, rear, w           |
+|South Bend      |1982|basso      |1       |18.0              |car, millennialcc, online|
++----------------+----+-----------+--------+------------------+-------------------------+
 only showing top 10 rows
 
-✅ Completato 'used_cars_data_1GB' in 69.40 secondi
+✅ Completato 'used_cars_data_1' in 68.55 secondi
 ✅ salvataggio del file...
-✅ salvataggio del file 'used_cars_data_1GB' in 136.47 secondi
+✅ salvataggio del file 'used_cars_data_1' in 68.55 secondi
 
-🚗 Elaborazione: used_cars_data_2GB.csv
-+---------------+----+-----------+--------+------------------+---------------------+
-|city           |year|price_range|num_cars|avg_daysonmarket  |top_3_words          |
-+---------------+----+-----------+--------+------------------+---------------------+
-|Brooklyn       |2017|medio      |17      |42.294117647058826|door, front, the     |
-|Cherry Hill    |2016|basso      |10      |133.6             |and, type, rear      |
-|East Petersburg|2016|basso      |7       |31.285714285714285|air, and, door       |
-|East Windsor   |2017|medio      |1       |7.0               |air, rear, window    |
-|Elizabeth      |2013|medio      |1       |6.0               |of, and, credit      |
-|Hamilton       |2017|medio      |13      |45.61538461538461 |and, to, door        |
-|New Milford    |2015|medio      |2       |21.0              |front, door, and     |
-|New Milford    |2017|medio      |4       |25.75             |door, front, warranty|
-|New Windsor    |2008|basso      |1       |5.0               |pwr, front, door     |
-|Reading        |2018|medio      |32      |104.4375          |and, with, the       |
-+---------------+----+-----------+--------+------------------+---------------------+
+🚗 Elaborazione: used_cars_data_2.csv
++------------+----+-----------+--------+------------------+----------------------+
+|city        |year|price_range|num_cars|avg_daysonmarket  |top_3_words           |
++------------+----+-----------+--------+------------------+----------------------+
+|Bethesda    |2019|alto       |4       |411.25            |front, rear, power    |
+|Brooklyn    |2017|medio      |14      |30.928571428571427|front, rear, wheel    |
+|Conshohocken|2014|basso      |1       |6.0               |power, wheel, front   |
+|Glenside    |2013|basso      |4       |91.75             |front, rear, power    |
+|Park Ridge  |2020|basso      |10      |123.6             |air, bag, front       |
+|Peru        |2019|alto       |3       |30.0              |front, wheel, rear    |
+|Reading     |2015|medio      |1       |31.0              |steering, seat, airbag|
+|Reading     |2018|medio      |1       |75.0              |power, wheel, rear    |
+|Roselle     |2018|basso      |3       |113.0             |front, rear, type     |
+|Schaumburg  |2021|medio      |220     |24.363636363636363|front, rear, wheel    |
++------------+----+-----------+--------+------------------+----------------------+
 only showing top 10 rows
 
-✅ Completato 'used_cars_data_2GB' in 137.43 secondi
+✅ Completato 'used_cars_data_2' in 133.21 secondi
 ✅ salvataggio del file...
-✅ salvataggio del file 'used_cars_data_2GB' in 270.93 secondi
+✅ salvataggio del file 'used_cars_data_2' in 133.21 secondi
 
-🚗 Elaborazione: used_cars_data_3GB.csv
-25/06/12 21:59:36 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 21:59:36 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-+-----------+----+-----------+--------+------------------+---------------------+
-|city       |year|price_range|num_cars|avg_daysonmarket  |top_3_words          |
-+-----------+----+-----------+--------+------------------+---------------------+
-|Brooksville|1999|basso      |1       |148.0             |our, all, vehicles   |
-|Cresco     |2011|basso      |1       |53.0              |front, type, rear    |
-|Forest City|2003|basso      |1       |19.0              |front, leather, our  |
-|Lake Wales |2013|basso      |7       |21.0              |front, door, steering|
-|Lakeland   |2019|medio      |183     |55.30054644808743 |front, door, rear    |
-|Lisbon     |2010|basso      |1       |124.0             |exterior, row, door  |
-|Marion     |2009|basso      |15      |143.2             |and, power, with     |
-|Marion     |2021|medio      |86      |27.488372093023255|and, front, to       |
-|Mason City |2003|basso      |1       |9.0               |door, seat, passenger|
-|Waverly    |2013|basso      |5       |84.8              |door, front, and     |
-+-----------+----+-----------+--------+------------------+---------------------+
+🚗 Elaborazione: used_cars_data_3.csv
++-------------+----+-----------+--------+------------------+-------------------+
+|city         |year|price_range|num_cars|avg_daysonmarket  |top_3_words        |
++-------------+----+-----------+--------+------------------+-------------------+
+|Belvidere    |2005|basso      |1       |36.0              |front, power, seats|
+|Breaux Bridge|2016|basso      |3       |45.333333333333336|front, rear, power |
+|Broussard    |2014|medio      |1       |15.0              |rear, system, power|
+|Chalmette    |2013|basso      |1       |30.0              |power, cd, airbags |
+|Cut Off      |2015|basso      |1       |8.0               |rear, air, front   |
+|Jackson      |2017|alto       |2       |180.0             |front, rear, type  |
+|Jonesville   |2020|medio      |1       |5.0               |rear, front, color |
+|Metairie     |2020|alto       |287     |138.85017421602788|rear, power, wheel |
+|Muscle Shoals|2014|medio      |1       |8.0               |power, front, fm   |
+|New Iberia   |2001|basso      |1       |151.0             |front, rear, w     |
++-------------+----+-----------+--------+------------------+-------------------+
 only showing top 10 rows
 
-✅ Completato 'used_cars_data_3GB' in 237.36 secondi
+✅ Completato 'used_cars_data_3' in 171.05 secondi
 ✅ salvataggio del file...
-25/06/12 22:03:25 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:03:26 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-✅ salvataggio del file 'used_cars_data_3GB' in 466.15 secondi
+✅ salvataggio del file 'used_cars_data_3' in 171.05 secondi
 
 🚗 Elaborazione: used_cars_data_clean.csv
-25/06/12 22:07:31 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:07:31 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:09:57 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:09:58 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-+-------------+----+-----------+--------+------------------+---------------------+
-|city         |year|price_range|num_cars|avg_daysonmarket  |top_3_words          |
-+-------------+----+-----------+--------+------------------+---------------------+
-|Ann Arbor    |2007|basso      |1       |0.0               |door, front, steering|
-|Bay Shore    |2019|alto       |7       |353.0             |and, front, door     |
-|Bronx        |2018|medio      |87      |38.54022988505747 |and, door, front     |
-|Brooklyn     |2017|medio      |393     |37.00508905852417 |door, front, and     |
-|East Hartford|2021|alto       |28      |31.178571428571427|and, with, front     |
-|East Meadow  |2017|medio      |11      |77.18181818181819 |and, front, the      |
-|East Windsor |2017|medio      |62      |28.338709677419356|and, rear, front     |
-|Green Brook  |2009|basso      |1       |1.0               |door, front, steering|
-|Meriden      |2013|basso      |29      |70.13793103448276 |front, rear, inc     |
-|Roselle      |2018|basso      |16      |98.6875           |front, and, rear     |
-+-------------+----+-----------+--------+------------------+---------------------+
+25/06/15 12:04:34 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
+25/06/15 12:04:34 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
++-------------+----+-----------+--------+------------------+----------------------+
+|city         |year|price_range|num_cars|avg_daysonmarket  |top_3_words           |
++-------------+----+-----------+--------+------------------+----------------------+
+|Ann Arbor    |2007|basso      |1       |0.0               |front, steering, wheel|
+|Bay Shore    |2019|alto       |7       |353.0             |front, rear, power    |
+|Bronx        |2018|medio      |87      |38.54022988505747 |front, rear, power    |
+|Brooklyn     |2017|medio      |393     |37.00508905852417 |front, rear, power    |
+|East Hartford|2021|alto       |28      |31.178571428571427|power, rear, front    |
+|East Meadow  |2017|medio      |11      |77.18181818181819 |front, rear, wheel    |
+|East Windsor |2017|medio      |62      |28.338709677419356|rear, power, front    |
+|Green Brook  |2009|basso      |1       |1.0               |front, power, wheel   |
+|Meriden      |2013|basso      |29      |70.13793103448276 |front, rear, w        |
+|Roselle      |2018|basso      |16      |98.6875           |front, rear, power    |
++-------------+----+-----------+--------+------------------+----------------------+
 only showing top 10 rows
 
-✅ Completato 'used_cars_data_clean' in 526.38 secondi
+✅ Completato 'used_cars_data_clean' in 447.65 secondi
 ✅ salvataggio del file...
-25/06/12 22:15:55 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:15:55 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:18:27 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-25/06/12 22:18:28 WARN RowBasedKeyValueBatch: Calling spill() on RowBasedKeyValueBatch. Will not spill but return 0.
-✅ salvataggio del file 'used_cars_data_clean' in 1040.96 secondi
+✅ salvataggio del file 'used_cars_data_clean' in 447.65 secondi
 
-⏱️ Tempo totale batch: 1986.40 secondi
+⏱️ Tempo totale batch: 861.47 secondi
+OPERAZIONE RIUSCITA: il processo con PID 7972 (processo figlio del
+PID 17024) � stato terminato.
+OPERAZIONE RIUSCITA: il processo con PID 17024 (processo figlio del
+PID 3464) � stato terminato.
+OPERAZIONE RIUSCITA: il processo con PID 3464 (processo figlio del
+PID 16156) � stato terminato.
 
 Process finished with exit code 0
