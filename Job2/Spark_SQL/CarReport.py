@@ -68,7 +68,7 @@ for file in file_list:
     end = time.time()
     print(f"✅ Completato '{file_name}' in {end - file_start:.2f} secondi")
     print(f"✅ salvataggio del file...")
-    report.write.mode("overwrite").json(f"{output_folder}{file_name}_report.json")
+ #   report.write.mode("overwrite").json(f"{output_folder}{file_name}_report.json")
     end = time.time()
     print(f"✅ salvataggio del file '{file_name}' in {end - file_start:.2f} secondi")
 

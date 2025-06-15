@@ -2,7 +2,12 @@ input_file = 'used_cars_data_clean.csv'
 output_name_template = 'used_cars_data_{}.csv'
 
 # dimensioni target in byte: 1GB, 2GB, 3GB, 4GB
-target_sizes = [1*1024**3, 2*1024**3, 3*1024**3, 4*1024**3]
+target_sizes = [
+    int(500 * 1024 ** 2),  # 500 MB
+    int(1 * 1024 ** 3),  # 1 GB
+    int(2 * 1024 ** 3),  # 2 GB
+    int(3 * 1024 ** 3)  # 3 GB
+]
 
 with open(input_file, 'r', encoding='utf-8') as infile:
     header = infile.readline()  # leggi header

@@ -92,7 +92,6 @@ word_freq AS (
 ),
 
 -- Step 3: Otteniamo le top 3 parole per ogni city-year-price_category
--- Approccio semplice: selezioniamo solo le prime 3 parole più frequenti usando row_number (Hive 2+ supporta window functions)
 top_words_ranked AS (
   SELECT
     city,

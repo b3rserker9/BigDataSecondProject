@@ -4,6 +4,12 @@ import os
 from tqdm import tqdm
 import time
 import datetime
+import nltk
+from nltk.corpus import stopwords
+import re
+
+nltk.download('stopwords')
+stop_words = set(stopwords.words('english'))
 
 car_brands = [
     "Toyota", "Honda", "Ford", "Chevrolet", "Nissan", "Volkswagen", "BMW",
@@ -75,7 +81,12 @@ def main():
         (~df_clean["model_name"].str.contains(r"[|:]", regex=True))
         ]
 
-    df_clean["description"] = df_clean["description"].astype(str).str.replace(r'\[\!@@.*?@@!\]', '', regex=True)
+    df_clean["description"] = (
+        df_clean["description"]
+        .astype(str)
+        .str.replace(r'\[\!@@.*?@@!\]', '', regex=True)
+        .apply(remove_stopwords)
+    )
 
     df_clean = df_clean.drop_duplicates()
 
@@ -84,6 +95,10 @@ def main():
     print(f"✅ Dataset pulito salvato in: {output_path}")
     print(f"⏱️ Tempo totale: {time.time() - start_time:.2f} secondi")
 
+def remove_stopwords(text):
+    words = re.findall(r'\b\w+\b', text.lower())  # tokenizza, rimuove punteggiatura
+    filtered_words = [word for word in words if word not in stop_words]
+    return ' '.join(filtered_words)
 
 def load_csv_with_progress(file_path):
     chunks = []
